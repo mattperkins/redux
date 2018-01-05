@@ -7,17 +7,30 @@ const initialState = {
 
 // Reducer
 const rootReducer = (state = initialState, action) => {
-  if ( action.type === 'INC_COUNTER' ) {
+  // if ( action.type === 'INC_COUNTER' ) {
+  //   return {
+  //     ...state,
+  //     counter: state.counter +1
+  //   } 
+  // }
+  // if ( action.type === 'ADD_COUNTER' ) {
+  //   return {
+  //     ...state,
+  //     counter: state.counter + action.value
+  //   } 
+  // }
+  // you can use 'switch statement' instead of 'if statements' (above)
+  switch (action.type ) {
+    case 'INC_COUNTER' :
+    return {
+          ...state,
+          counter: state.counter +1
+        }
+    case 'ADD_COUNTER' :
     return {
       ...state,
-      counter: state.counter +1
-    } 
-  }
-  if ( action.type === 'ADD_COUNTER' ) {
-    return {
-      ...state,
-      counter: state.counter + action.value
-    } 
+          counter:state.counter + action.value
+    }
   }
   return state
 }
